@@ -19,5 +19,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/homepage', [App\Http\Controllers\MainController::class, 'index'])->name('homepage');
-
+Route::get('/about', [App\Http\Controllers\MainController::class, 'about'])->name('about'); 
 require __DIR__.'/auth.php';

@@ -7,4 +7,8 @@ class MainController extends Controller
     {
         return view('user/homepage');
     }
+    public function about()
+    {
+        return view('user/about');
+    }
 }
