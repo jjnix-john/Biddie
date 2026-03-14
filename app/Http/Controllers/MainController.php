@@ -7,8 +7,24 @@ class MainController extends Controller
     {
         return view('user/homepage');
     }
+
+    public function shop()
+    {
+        return view('user/shop');
+    }
+
+    public function bidding()
+    {
+        return view('user/biddingarea');
+    }
+
     public function about()
     {
         return view('user/about');
+    }
+
+    public function contacts()
+    {
+        return view('user/contacts');
     }
 }

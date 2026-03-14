@@ -19,5 +19,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/homepage', [App\Http\Controllers\MainController::class, 'index'])->name('homepage');
-Route::get('/about', [App\Http\Controllers\MainController::class, 'about'])->name('about'); 
-require __DIR__.'/auth.php';
+Route::get('/shop', [App\Http\Controllers\MainController::class, 'shop'])->name('shop');
+Route::get('/bidding', [App\Http\Controllers\MainController::class, 'bidding'])->name('bidding');
+Route::get('/about', [App\Http\Controllers\MainController::class, 'about'])->name('about');
+Route::get('/contacts', [App\Http\Controllers\MainController::class, 'contacts'])->name('contacts');
+require __DIR__ . '/auth.php';
