@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\Auctions;
 use Illuminate\Http\Request;
 class MainController extends Controller
 {
@@ -15,7 +16,8 @@ class MainController extends Controller
 
     public function bidding()
     {
-        return view('user/biddingarea');
+        $auctions = Auctions::where('status', 'active')->orderBy('end_time')->limit(12)->get();
+        return view('user/biddingarea', compact('auctions'));
     }
 
     public function about()
