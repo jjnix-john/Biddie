@@ -25,7 +25,6 @@
             background: rgba(10, 30, 63, 0.7);
             backdrop-filter: blur(5px);
         }
-
     </style>
 </head>
 
@@ -36,16 +35,21 @@
                 <a href="{{ route('homepage') }}" class="text-2xl font-bold tracking-tight">Biddie</a>
 
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="{{ route('homepage') }}" class="text-white hover:text-gray-200 font-semibold">Home</a>
-                    <a href="{{ route('shop') }}" class="text-white hover:text-gray-200 font-semibold">Shop</a>
-                    <a href="{{ route('bidding') }}" class="text-white hover:text-gray-200 font-semibold">Bidding</a>
-                    <a href="{{ route('about') }}" class="text-white hover:text-gray-200 font-semibold">About</a>
-                    <a href="{{ route('contacts') }}" class="text-white hover:text-gray-200 font-semibold">Contact</a>
+                    <a href="{{ route('homepage') }}" class="text-white hover:text-gray-200 font-semibold">Market</a>
+                    <a href="{{ route('info') }}" class="text-white hover:text-gray-200 font-semibold">About/Contact</a>
+                    <a href="{{ route('social.feed') }}" class="text-white hover:text-gray-200 font-semibold">Feed</a>
+                    <a href="{{ route('friends.index') }}"
+                        class="text-white hover:text-gray-200 font-semibold">Friends</a>
+                    <a href="{{ route('messages.index') }}"
+                        class="text-white hover:text-gray-200 font-semibold">Messages</a>
                 </div>
 
                 <div class="hidden md:flex items-center gap-2">
                     @auth
                         <a href="{{ route('dashboard') }}" class="btn btn-sm btn-primary">Dashboard</a>
+                        <a href="{{ route('social.feed') }}" class="btn btn-sm btn-secondary">Feed</a>
+                        <a href="{{ route('friends.index') }}" class="btn btn-sm btn-secondary">Friends</a>
+                        <a href="{{ route('messages.index') }}" class="btn btn-sm btn-secondary">Messages</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="btn btn-sm btn-ghost">Logout</button>
@@ -72,13 +76,15 @@
         <div id="mobile-menu" class="hidden md:hidden bg-black/60 border-t border-white/10">
             <div class="px-4 py-4 space-y-1">
                 <a href="{{ route('homepage') }}"
-                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Home</a>
-                <a href="{{ route('shop') }}" class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Shop</a>
-                <a href="{{ route('bidding') }}"
-                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Bidding</a>
-                <a href="{{ route('about') }}" class="block px-3 py-2 rounded-md text-white hover:bg-white/10">About</a>
-                <a href="{{ route('contacts') }}"
-                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Contact</a>
+                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Market</a>
+                <a href="{{ route('info') }}"
+                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">About/Contact</a>
+                <a href="{{ route('social.feed') }}"
+                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Feed</a>
+                <a href="{{ route('friends.index') }}"
+                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Friends</a>
+                <a href="{{ route('messages.index') }}"
+                    class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Messages</a>
                 @auth
                     <a href="{{ route('dashboard') }}"
                         class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Dashboard</a>

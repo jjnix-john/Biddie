@@ -4,29 +4,19 @@ use App\Models\Auctions;
 use Illuminate\Http\Request;
 class MainController extends Controller
 {
-    public function index()
-    {
-        return view('user/homepage');
-    }
-
-    public function shop()
-    {
-        return view('user/shop');
-    }
-
-    public function bidding()
+    public function market()
     {
         $auctions = Auctions::where('status', 'active')->orderBy('end_time')->limit(12)->get();
-        return view('user/biddingarea', compact('auctions'));
+        return view('user/market', compact('auctions'));
     }
 
     public function about()
     {
-        return view('user/about');
+        return view('user/info');
     }
 
     public function contacts()
     {
-        return view('user/contacts');
+        return view('user/info');
     }
 }

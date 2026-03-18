@@ -6,6 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Message;
+use App\Models\Post;
+use App\Models\Comment;
+use App\Models\Like;
+use App\Models\Share;
+use App\Models\FriendRequest;
+use App\Models\Follow;
 
 class User extends Authenticatable
 {
@@ -45,4 +52,55 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function sentMessages()
+    {
+        return $this->hasMany(Message::class, 'sender_id');
+    }
+
+    public function receivedMessages()
+    {
+        return $this->hasMany(Message::class, 'receiver_id');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function shares()
+    {
+        return $this->hasMany(Share::class);
+    }
+
+    public function sentFriendRequests()
+    {
+        return $this->hasMany(FriendRequest::class, 'sender_id');
+    }
+
+    public function receivedFriendRequests()
+    {
+        return $this->hasMany(FriendRequest::class, 'receiver_id');
+    }
+
+    public function follows()
+    {
+        return $this->hasMany(Follow::class, 'follower_id');
+    }
+
+    public function followers()
+    {
+        return $this->hasMany(Follow::class, 'followee_id');
+    }
 }
+
