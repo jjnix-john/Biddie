@@ -47,6 +47,7 @@
                 <div class="hidden md:flex items-center gap-2">
                     @auth
                         <a href="{{ route('dashboard') }}" class="btn btn-sm btn-primary">Dashboard</a>
+                        <a href="{{ route('profile.edit') }}" class="btn btn-sm btn-secondary">Profile</a>
                         <a href="{{ route('social.feed') }}" class="btn btn-sm btn-secondary">Feed</a>
                         <a href="{{ route('friends.index') }}" class="btn btn-sm btn-secondary">Friends</a>
                         <a href="{{ route('messages.index') }}" class="btn btn-sm btn-secondary">Messages</a>
@@ -88,6 +89,14 @@
                 @auth
                     <a href="{{ route('dashboard') }}"
                         class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Dashboard</a>
+                    <a href="{{ route('profile.edit') }}"
+                        class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Profile</a>
+                    <a href="{{ route('social.feed') }}"
+                        class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Feed</a>
+                    <a href="{{ route('friends.index') }}"
+                        class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Friends</a>
+                    <a href="{{ route('messages.index') }}"
+                        class="block px-3 py-2 rounded-md text-white hover:bg-white/10">Messages</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit"
@@ -119,7 +128,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton?.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
+    });
     </script>
 
     @stack('scripts')
