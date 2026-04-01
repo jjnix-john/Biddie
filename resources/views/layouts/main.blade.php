@@ -17,13 +17,22 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            min-height: 100vh;
+            color: #f8fafc;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.84)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
             background-size: cover;
+            background-attachment: fixed;
         }
 
         .overlay {
-            background: rgba(10, 30, 63, 0.7);
-            backdrop-filter: blur(5px);
+            background: rgba(10, 30, 63, 0.72);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card {
+            background: rgba(15, 23, 42, 0.76);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.35);
         }
     </style>
 </head>
@@ -114,7 +123,9 @@
     </header>
 
     <main class="pt-24">
-        @yield('content')
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+            @yield('content')
+        </div>
     </main>
 
     <footer class="mt-16 py-10 text-center text-gray-200">
@@ -128,7 +139,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton?.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-    });
+        });
     </script>
 
     @stack('scripts')
